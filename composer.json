@@ -1,0 +1,25 @@
+{
+  "name": "mcw/preisstaffel",
+  "description": "Erweiterte Preise mit Anzeige 'Ab'",
+    "version": "v1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "authors": [{
+        "name": "Martina C Wieser - MCW"
+    }],
+    "require": {
+        "shopware/core": "*"
+    },
+  "autoload": {
+    "psr-4": {
+      "Mcw\\Preisstaffel\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "Mcw\\Preisstaffel\\McwPreisstaffel",
+    "label": {
+      "de-DE": "Erweiterte Preise mit Anzeige 'Ab'",
+      "en-GB": "Advanced prices with 'from'"
+    }
+  }
+}
