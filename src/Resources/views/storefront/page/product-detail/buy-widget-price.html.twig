@@ -37,7 +37,14 @@
                                                             {% endif %}
                                                         </span>
                                                     {% else %}
-                                                        <span class="product-block-prices-quantity">{{ price.quantity }}</span>
+                                                        {% if loop.last %}
+                                                            {{ "detail.priceDataInfoFrom"|trans|sw_sanitize }}
+                                                            <span class="product-block-prices-quantity">{{ price.quantity }}</span>
+
+                                                        {% else %}
+                                                            {{ "detail.priceDataInfoUntil"|trans|sw_sanitize }}
+                                                            <span class="product-block-prices-quantity">{{ price.quantity }}</span>
+                                                        {% endif %}
                                                     {% endif %}
                                                 {% endif %}
                                                 {% if page.product.purchaseUnit > 1 %}
