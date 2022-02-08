@@ -26,19 +26,19 @@
                                                     {{ "detail.priceDataInfoFrom"|trans|sw_sanitize }}
                                                     <span class="product-block-prices-quantity">{{ price.quantity }}</span>
                                                 {% else %}
-                                                    {% if page.product.customFields.migration_mcgreenmig_product_abbis %}
+                                                    {% if page.product.customFields.mcwpreisstaffel_product_abbis_1 %}
                                                         {{ "detail.priceDataInfoUntil"|trans|sw_sanitize }}
-                                                        <span class="product-block-prices-quantity">{{ price.quantity }}</span>
-                                                    {% else %}
                                                         {{ "detail.priceDataInfoFrom"|trans|sw_sanitize }}
                                                         <span class="product-block-prices-quantity">
-                                                            {# MCW Überprüfen ob übernommene Menge vorhanden - wenn ja anzeigen, ansonsten Mindestmenge verwenden #}
+                                                            {# MCW ÃœberprÃ¼fen ob Ã¼bernommene Menge vorhanden - wenn ja anzeigen, ansonsten Mindestmenge verwenden #}
                                                             {% if oldquantity %}
                                                                 {{ oldquantity }}
                                                             {% else %}
                                                                 {{ page.product.minPurchase }}
                                                             {% endif %}
                                                         </span>
+                                                    {% else %}
+                                                        <span class="product-block-prices-quantity">{{ price.quantity }}</span>
                                                     {% endif %}
                                                 {% endif %}
                                                 {% if page.product.purchaseUnit > 1 %}
@@ -60,7 +60,7 @@
                                         {% endblock %}
                                     </tr>
                                 {% endblock %}
-                                {# MCW - wir übernehmen die alte min-menge in die nächste Schleife und addieren +1 #}
+                                {# MCW - wir Ã¼bernehmen die alte min-menge in die nÃ¤chste Schleife und addieren +1 #}
                                 {% set oldquantity = price.quantity+1 %}
                             {% endfor %}
                         {% endblock %}
