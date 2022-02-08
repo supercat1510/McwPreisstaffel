@@ -27,7 +27,6 @@
                                                     <span class="product-block-prices-quantity">{{ price.quantity }}</span>
                                                 {% else %}
                                                     {% if page.product.customFields.mcwpreisstaffel_product_abbis_1 %}
-                                                        {{ "detail.priceDataInfoUntil"|trans|sw_sanitize }}
                                                         {{ "detail.priceDataInfoFrom"|trans|sw_sanitize }}
                                                         <span class="product-block-prices-quantity">
                                                             {# MCW Überprüfen ob übernommene Menge vorhanden - wenn ja anzeigen, ansonsten Mindestmenge verwenden #}
