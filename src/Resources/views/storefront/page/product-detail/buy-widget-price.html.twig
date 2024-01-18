@@ -3,7 +3,7 @@
 {% block page_product_detail_price_block %}
     <div class="product-block-prices">
         {% block page_product_detail_price_block_table %}
-            <table class="table table-sm table-bordered product-block-prices-table">
+            <table class="table product-block-prices-grid">
                 {% block page_product_detail_price_block_table_head %}
                     {{ parent() }}
                 {% endblock %}
@@ -18,10 +18,10 @@
                                         itemtype="https://schema.org/Offer">
 
                                         {% block page_product_detail_price_block_table_body_cell_quantity %}
-                                            <th scope="row" class="product-block-prices-cell">
-                                                <meta itemprop="priceCurrency" content="{{ page.header.activeCurrency.id }}" />
-                                                <meta itemprop="price" content="{{ price.unitPrice }}" />
-                                                <link itemprop="availability" href="https://schema.org/InStock" />
+                                            <th scope="row" class="product-block-prices-cell product-block-prices-cell-thin">
+                                                <meta itemprop="priceCurrency" content="{{ page.header.activeCurrency.translated.shortName }}">
+                                                <meta itemprop="price" content="{{ price.unitPrice }}">
+
                                                 {% if loop.last %}
                                                     {{ "detail.priceDataInfoFrom"|trans|sw_sanitize }}
                                                     <span class="product-block-prices-quantity">{{ price.quantity }}</span>
@@ -37,14 +37,8 @@
                                                             {% endif %}
                                                         </span>
                                                     {% else %}
-                                                        {% if loop.last %}
-                                                            {{ "detail.priceDataInfoFrom"|trans|sw_sanitize }}
-                                                            <span class="product-block-prices-quantity">{{ price.quantity }}</span>
-
-                                                        {% else %}
-                                                            {{ "detail.priceDataInfoUntil"|trans|sw_sanitize }}
-                                                            <span class="product-block-prices-quantity">{{ price.quantity }}</span>
-                                                        {% endif %}
+                                                        {{ "detail.priceDataInfoUntil"|trans|sw_sanitize }}
+                                                        <span class="product-block-prices-quantity">{{ price.quantity }}</span>
                                                     {% endif %}
                                                 {% endif %}
                                                 {% if page.product.purchaseUnit > 1 %}
